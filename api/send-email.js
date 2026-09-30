@@ -10,13 +10,17 @@ export default async function handler(req, res) {
 
   const data = req.body
 
-  const subject = `New intake submission — ${data.company_name || 'Unknown'} · ${data.source || 'direct'}`
+  const kind = data.company_type === 'established' ? 'Market-selection brief request' : 'New intake submission'
+  const subject = `${kind} — ${data.company_name || 'Unknown'} · ${data.channel || 'creative_valley'} · ${data.source || 'direct'}`
 
   const body = `
 New Startup Intake Submission
 =============================
 
 Source: ${data.source}
+Channel: ${data.channel || 'creative_valley'}
+Company type: ${data.company_type || 'startup'}
+Notes: ${data.notes || '—'}
 Submitted: ${new Date().toISOString()}
 
 COMPANY PROFILE
@@ -59,7 +63,7 @@ Expansion readiness: ${data.score_readiness}/100
         'Content-Type': 'application/json',
       },
       body: JSON.stringify({
-        from: 'Startup Expansion Platform <onboarding@resend.dev>',
+        from: process.env.EMAIL_FROM || 'Startup Expansion Platform <onboarding@resend.dev>',
         to: [ADMIN_EMAIL],
         subject,
         text: body,

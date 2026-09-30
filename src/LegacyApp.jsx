@@ -77,7 +77,7 @@ export default function App() {
     const resolved = { ...data }
     if (resolved.sector === 'Other') resolved.sector = resolved.sector_other.trim()
     delete resolved.sector_other
-    const payload = { ...resolved, source, ...computed }
+    const payload = { ...resolved, source, channel: 'creative_valley', ...computed }
 
     // Fire Supabase insert and email notification in parallel
     const [dbResult] = await Promise.allSettled([
