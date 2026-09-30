@@ -35,7 +35,7 @@ function Cgv() {
       <h2>1. Objet</h2>
       <p>Les présentes conditions régissent la vente, par {SELLER.name} (« le Prestataire »), sous la marque Verynta, de l'évaluation de préparation au marché français (« l'Évaluation ») et, le cas échéant, du plan d'entrée sur le marché français (« le Plan »).</p>
       <h2>2. Prix</h2>
-      <p>L'Évaluation est proposée au prix de 39 € hors taxes ; le Plan au prix de 790 € hors taxes. La TVA est appliquée selon les règles en vigueur en fonction de la qualité et du pays du client : autoliquidation pour les clients assujettis établis dans l'Union européenne hors de France, hors champ de la TVA française pour les clients professionnels établis hors de l'Union européenne, TVA française au taux en vigueur dans les autres cas. Le montant de l'Évaluation est déduit du prix du Plan si celui-ci est commandé dans un délai de [6 MOIS — À CONFIRMER].</p>
+      <p>L'Évaluation est proposée au prix de 39 € hors taxes ; le Plan au prix de 790 € hors taxes. La TVA est appliquée selon les règles en vigueur en fonction de la qualité et du pays du client : autoliquidation pour les clients assujettis établis dans l'Union européenne hors de France, hors champ de la TVA française pour les clients professionnels établis hors de l'Union européenne, TVA française au taux en vigueur dans les autres cas. L'Évaluation et le Plan sont des prestations distinctes, facturées séparément ; le prix de l'une n'est pas déductible du prix de l'autre.</p>
       <h2>3. Commande et paiement</h2>
       <p>La commande est passée en ligne et payée par carte via Stripe. Une facture est émise à la validation du paiement.</p>
       <h2>4. Exécution</h2>

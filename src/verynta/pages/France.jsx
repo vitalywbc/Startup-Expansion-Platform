@@ -44,7 +44,7 @@ export default function France() {
 
         <section id="pricing" className="vy-wrap vy-section">
           <h2 className="vy-h2 vy-h2--wide">Start with the verdict. Go further if it says yes.</h2>
-          <p className="vy-body">What you pay for each step is credited against the next one. Prices exclude VAT; VAT is added only where it applies.</p>
+          <p className="vy-body">Each step is a separate deliverable, bought on its own. Prices exclude VAT; VAT is added only where it applies.</p>
           <div className="vy-tiers">
             <div className="vy-card vy-tier vy-tier--main">
               <h3>Readiness assessment</h3>

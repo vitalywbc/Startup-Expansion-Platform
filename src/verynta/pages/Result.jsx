@@ -91,7 +91,7 @@ export default function Result() {
             {loading ? 'Opening secure payment…' : 'Get the full assessment for €39'}
           </button>
           {error && <p className="vy-error" role="alert">{error}</p>}
-          <p className="vy-fine">€39 excl. VAT; VAT is added only where it applies. Secure payment by Stripe. Credited if you continue to the France entry plan. See the <Link to="/legal/cgv">terms of sale</Link>.</p>
+          <p className="vy-fine">€39 excl. VAT; VAT is added only where it applies. Secure payment by Stripe. See the <Link to="/legal/cgv">terms of sale</Link>.</p>
         </section>
       </main>
       <Footer />
