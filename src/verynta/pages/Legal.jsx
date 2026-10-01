@@ -3,12 +3,10 @@
 import { Header, Footer } from '../Layout'
 
 const SELLER = {
-  name: '[DÉNOMINATION SOCIALE DE LA SAS]',
-  capital: '[CAPITAL] €',
-  address: '[ADRESSE DU SIÈGE]',
-  rcs: '[RCS VILLE + SIREN]',
+  name: 'Vitaliy Charushin EI',
+  address: '[ADRESSE PROFESSIONNELLE]',
+  siret: '[SIRET]',
   vat: '[N° TVA INTRACOMMUNAUTAIRE]',
-  director: '[NOM DU PRÉSIDENT DE LA SAS]',
 }
 
 function Mentions() {
@@ -16,13 +14,13 @@ function Mentions() {
     <>
       <h1 className="vy-h2">Mentions légales</h1>
       <h2>Éditeur du site</h2>
-      <p>Le site verynta.com est édité par {SELLER.name}, société par actions simplifiée au capital de {SELLER.capital}, dont le siège est situé {SELLER.address}, immatriculée au {SELLER.rcs}, n° TVA {SELLER.vat}.</p>
-      <p>Directeur de la publication : {SELLER.director}.</p>
+      <p>Le site verynta.com est édité par Vitaliy Charushin, entrepreneur individuel ({SELLER.name}), {SELLER.address}, SIRET {SELLER.siret}, n° TVA {SELLER.vat}.</p>
+      <p>Directeur de la publication : Vitaliy Charushin.</p>
       <p>Contact : hello@verynta.com</p>
       <h2>Hébergement</h2>
       <p>Vercel Inc., 440 N Barranca Ave #4133, Covina, CA 91723, États-Unis. [ADRESSE À VÉRIFIER]</p>
       <h2>Propriété intellectuelle</h2>
-      <p>La marque Verynta, le nom de domaine verynta.com, la méthode d'évaluation et la plateforme sont la propriété de Vitaliy Charushin et sont exploités par {SELLER.name} sous licence. Toute reproduction sans autorisation est interdite.</p>
+      <p>La marque Verynta, le nom de domaine verynta.com, la méthode d'évaluation et la plateforme sont la propriété de Vitaliy Charushin. Toute reproduction sans autorisation est interdite.</p>
     </>
   )
 }
@@ -59,13 +57,13 @@ function Privacy() {
     <>
       <h1 className="vy-h2">Politique de confidentialité</h1>
       <h2>Responsable du traitement</h2>
-      <p>{SELLER.name}, {SELLER.address}. Contact : hello@verynta.com</p>
+      <p>Vitaliy Charushin, entrepreneur individuel, {SELLER.address}. Contact : hello@verynta.com</p>
       <h2>Données collectées et finalités</h2>
       <p>Informations sur l'entreprise et coordonnées fournies dans le questionnaire d'admission, réponses au questionnaire sectoriel, données de facturation. Elles servent à calculer la position préliminaire, à réaliser l'Évaluation commandée, à facturer et à répondre aux demandes.</p>
       <h2>Bases légales</h2>
       <p>Exécution du contrat pour les prestations commandées ; intérêt légitime pour le traitement des demandes et le suivi commercial ; obligation légale pour la facturation.</p>
       <h2>Destinataires et sous-traitants</h2>
-      <p>Vitaliy Charushin (réalisation des évaluations), Supabase (stockage des données), Stripe (paiement), Resend (envoi d'emails), Vercel (hébergement). Certains prestataires sont établis hors de l'Union européenne ; les transferts sont encadrés par les clauses contractuelles types de la Commission européenne.</p>
+      <p>Supabase (stockage des données), Stripe (paiement), Resend (envoi d'emails), Vercel (hébergement). Certains prestataires sont établis hors de l'Union européenne ; les transferts sont encadrés par les clauses contractuelles types de la Commission européenne.</p>
       <h2>Durée de conservation</h2>
       <p>Données de prospection : 3 ans après le dernier contact. Données liées aux prestations : durée de la relation puis 5 ans. Pièces comptables : 10 ans.</p>
       <h2>Vos droits</h2>

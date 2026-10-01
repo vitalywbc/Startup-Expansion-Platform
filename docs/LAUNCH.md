@@ -11,8 +11,8 @@ Local testing of the Verynta site: `npm run dev`, then open `http://localhost:51
 Run `supabase/2026-10-verynta.sql` in the SQL editor.
 Copy the **service_role** key (Project Settings → API) for step 3. It must never go into a `VITE_` variable.
 
-## 2. Stripe (account of the selling SAS), in TEST mode first
-1. Settings → Tax: set the origin address (the SAS's) and add the France registration. Turn Stripe Tax on.
+## 2. Stripe (account in the name of Vitaliy Charushin EI), in TEST mode first
+1. Settings → Tax: set the origin address (your professional address) and add the France registration. Turn Stripe Tax on.
 2. Product catalogue → Add product "Readiness assessment — France":
    one-off price **39.00 EUR**, tax behaviour **Exclusive**, tax code **General – Services**.
    Copy the price ID (`price_…`).
@@ -37,7 +37,7 @@ Domains → Add `verynta.com`, copy the DNS records into GoDaddy, wait for "Veri
 Create an API key and set `RESEND_API_KEY` in Vercel.
 
 ## 5. Legal pages
-Fill every `[BRACKETED]` field in `src/verynta/pages/Legal.jsx` (SAS details, mediator, credit period)
+Fill every `[BRACKETED]` field in `src/verynta/pages/Legal.jsx` (address, SIRET, VAT number, consumer mediator, court city)
 and have the texts checked before switching Stripe to live mode.
 
 ## 6. Test, then go live
