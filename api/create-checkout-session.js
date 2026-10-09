@@ -37,6 +37,7 @@ export default async function handler(req, res) {
       tax_id_collection: { enabled: true },
       automatic_tax: { enabled: true },
       invoice_creation: { enabled: true },
+      allow_promotion_codes: true,
       locale: 'en',
       success_url: `${origin}/thanks?session_id={CHECKOUT_SESSION_ID}`,
       cancel_url: `${origin}/france/result?cancelled=1`,

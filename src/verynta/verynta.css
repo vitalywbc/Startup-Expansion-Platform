@@ -49,14 +49,14 @@ body.vy { background: #EEF1EF; }
 .vy-footer__links { display: flex; flex-wrap: wrap; gap: 20px; }
 
 /* type */
-.vy-display { font-size: clamp(44px, 7vw, 92px); line-height: 0.98; font-weight: 800; letter-spacing: -0.035em; max-width: 14ch; }
-.vy-hero--home .vy-display { max-width: 20ch; }
-.vy-h1 { font-size: clamp(34px, 5vw, 48px); line-height: 1.04; font-weight: 800; letter-spacing: -0.03em; }
-.vy-h2 { font-size: clamp(28px, 4vw, 44px); line-height: 1.08; font-weight: 800; letter-spacing: -0.03em; }
+.vy-display { font-size: clamp(36px, 4.8vw, 64px); line-height: 1.02; font-weight: 800; letter-spacing: -0.03em; max-width: 14ch; }
+.vy-hero--home .vy-display { max-width: 22ch; }
+.vy-h1 { font-size: clamp(30px, 3.6vw, 40px); line-height: 1.04; font-weight: 800; letter-spacing: -0.03em; }
+.vy-h2 { font-size: clamp(26px, 3vw, 36px); line-height: 1.08; font-weight: 800; letter-spacing: -0.03em; }
 .vy-h2--wide { max-width: 22ch; }
-.vy-h3 { font-size: 28px; line-height: 1.12; font-weight: 800; letter-spacing: -0.02em; }
+.vy-h3 { font-size: 24px; line-height: 1.12; font-weight: 800; letter-spacing: -0.02em; }
 .vy-h4 { font-size: 19px; font-weight: 700; }
-.vy-lead { font-size: clamp(17px, 2vw, 21px); line-height: 1.55; color: var(--ink-2); max-width: 60ch; }
+.vy-lead { font-size: clamp(17px, 1.6vw, 19px); line-height: 1.55; color: var(--ink-2); max-width: 60ch; }
 .vy-body { font-size: 17px; line-height: 1.6; color: var(--ink-2); max-width: 65ch; }
 .vy-muted { font-size: 15px; color: var(--v-validation); }
 .vy-muted-strong { font-size: 15px; color: var(--ink-2); }
@@ -144,7 +144,7 @@ body.vy { background: #EEF1EF; }
 .vy-tier p { font-size: 16px; line-height: 1.6; color: var(--ink-2); }
 .vy-tier--main { box-shadow: 0 0 0 2px var(--ink); }
 .vy-tier .vy-btn, .vy-tier .vy-muted { margin-top: auto; }
-.vy-root .vy-price { font-size: 52px; font-weight: 800; letter-spacing: -0.03em; line-height: 1; color: var(--ink); }
+.vy-root .vy-price { font-size: 44px; font-weight: 800; letter-spacing: -0.03em; line-height: 1; color: var(--ink); }
 .vy-root .vy-price--text { font-size: 28px; line-height: 1.2; }
 
 /* intake fork */
@@ -176,7 +176,7 @@ body.vy { background: #EEF1EF; }
 @media (min-width: 900px) {
   .vy-wrap, .vy-header, .vy-footer { padding-inline: 48px; }
   .vy-nav a:not(.vy-btn) { display: inline; }
-  .vy-hero { padding-top: 88px; padding-bottom: 104px; }
+  .vy-hero { padding-top: 64px; padding-bottom: 80px; }
   .vy-hero--split { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 80px; }
   .vy-card { padding: 40px; }
   .vy-section { padding-block: 104px; }

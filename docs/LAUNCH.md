@@ -2,7 +2,7 @@
 
 The code serves two sites from one deployment:
 - `*.vercel.app` → the original intake (Creative Valley), unchanged, tagged `channel = creative_valley`
-- `verynta.com` → the Verynta site with the paid flow, tagged `channel = direct_paid`
+- `expansion.verynta.com` → the Verynta site with the paid flow, tagged `channel = direct_paid`
 
 Local testing of the Verynta site: `npm run dev`, then open `http://localhost:5173/?site=verynta`
 (`?site=legacy` switches back). Payments need `vercel dev` or a deployment, because they use `/api`.
@@ -17,18 +17,18 @@ Copy the **service_role** key (Project Settings → API) for step 3. It must nev
    one-off price **39.00 EUR**, tax behaviour **Exclusive**, tax code **General – Services**.
    Copy the price ID (`price_…`).
 3. Developers → API keys: copy the secret key (`sk_test_…`).
-4. After the first deploy on verynta.com: Developers → Webhooks → Add endpoint
-   `https://verynta.com/api/stripe-webhook`, event `checkout.session.completed`.
+4. After the first deploy on expansion.verynta.com: Developers → Webhooks → Add endpoint
+   `https://expansion.verynta.com/api/stripe-webhook`, event `checkout.session.completed`.
    Copy the signing secret (`whsec_…`).
 5. Settings → Branding and public details: name "Verynta", statement descriptor "VERYNTA".
 
 ## 3. Vercel
 1. Upgrade the project to Pro (commercial use).
-2. Settings → Domains: add `verynta.com` and `www.verynta.com`; copy the DNS records into GoDaddy
+2. Settings → Domains: add `expansion.verynta.com`; copy the DNS records into GoDaddy
    (first disconnect the GoDaddy website-builder site from the domain).
 3. Settings → Environment Variables (Production), see `.env.example`:
    `SUPABASE_SERVICE_ROLE_KEY`, `STRIPE_SECRET_KEY`, `STRIPE_PRICE_ID`, `STRIPE_WEBHOOK_SECRET`,
-   `EMAIL_FROM` (`Verynta <hello@verynta.com>`), `SITE_URL` (`https://verynta.com`),
+   `EMAIL_FROM` (`Verynta <hello@verynta.com>`), `SITE_URL` (`https://expansion.verynta.com`),
    plus the existing `VITE_SUPABASE_URL`, `VITE_SUPABASE_ANON_KEY`, `RESEND_API_KEY`, `ADMIN_EMAIL`.
 4. Redeploy after changing variables.
 
