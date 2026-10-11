@@ -4,9 +4,9 @@ import { Header, Footer } from '../Layout'
 
 const SELLER = {
   name: 'Vitaliy Charushin EI',
-  address: '[ADRESSE PROFESSIONNELLE]',
-  siret: '[SIRET]',
-  vat: '[N° TVA INTRACOMMUNAUTAIRE]',
+  address: '11 rue Cranot, 94270 Le Kremlin-Bicêtre',
+  siren: '930 812 557',
+  vat: 'FR34930812557',
 }
 
 function Mentions() {
@@ -14,11 +14,11 @@ function Mentions() {
     <>
       <h1 className="vy-h2">Mentions légales</h1>
       <h2>Éditeur du site</h2>
-      <p>Le site verynta.com est édité par Vitaliy Charushin, entrepreneur individuel ({SELLER.name}), {SELLER.address}, SIRET {SELLER.siret}, n° TVA {SELLER.vat}.</p>
+      <p>Le site verynta.com est édité par Vitaliy Charushin, entrepreneur individuel ({SELLER.name}), {SELLER.address}, SIREN {SELLER.siren}, n° TVA {SELLER.vat}.</p>
       <p>Directeur de la publication : Vitaliy Charushin.</p>
       <p>Contact : hello@verynta.com</p>
       <h2>Hébergement</h2>
-      <p>Vercel Inc., 440 N Barranca Ave #4133, Covina, CA 91723, États-Unis. [ADRESSE À VÉRIFIER]</p>
+      <p>Vercel Inc., 440 N Barranca Ave #4133, Covina, CA 91723, États-Unis.</p>
       <h2>Propriété intellectuelle</h2>
       <p>La marque Verynta, le nom de domaine verynta.com, la méthode d'évaluation et la plateforme sont la propriété de Vitaliy Charushin. Toute reproduction sans autorisation est interdite.</p>
     </>
@@ -31,7 +31,7 @@ function Cgv() {
       <h1 className="vy-h2">Conditions générales de vente</h1>
       <p className="vy-muted">English translation for information below the French text is to be added. In case of discrepancy, the French version prevails.</p>
       <h2>1. Objet</h2>
-      <p>Les présentes conditions régissent la vente, par {SELLER.name} (« le Prestataire »), sous la marque Verynta, de l'évaluation de préparation au marché français (« l'Évaluation ») et, le cas échéant, du plan d'entrée sur le marché français (« le Plan »).</p>
+      <p>Les présentes conditions régissent la vente, par {SELLER.name} (« le Prestataire »), sous la marque Verynta, de l'évaluation de préparation au marché français (« l'Évaluation ») et, le cas échéant, du plan d'entrée sur le marché français (« le Plan »). Les prestations sont destinées exclusivement aux clients professionnels (entreprises et entrepreneurs agissant dans le cadre de leur activité professionnelle) ; elles ne sont pas proposées aux consommateurs.</p>
       <h2>2. Prix</h2>
       <p>L'Évaluation est proposée au prix de 39 € hors taxes ; le Plan au prix de 790 € hors taxes. La TVA est appliquée selon les règles en vigueur en fonction de la qualité et du pays du client : autoliquidation pour les clients assujettis établis dans l'Union européenne hors de France, hors champ de la TVA française pour les clients professionnels établis hors de l'Union européenne, TVA française au taux en vigueur dans les autres cas. L'Évaluation et le Plan sont des prestations distinctes, facturées séparément ; le prix de l'une n'est pas déductible du prix de l'autre.</p>
       <h2>3. Commande et paiement</h2>
@@ -41,13 +41,13 @@ function Cgv() {
       <h2>5. Questionnaire non retourné</h2>
       <p>Si le questionnaire complété n'est pas retourné dans un délai de 30 jours à compter de son envoi, la prestation est réputée abandonnée par le client et aucun remboursement n'est dû.</p>
       <h2>6. Droit de rétractation</h2>
-      <p>Les clients professionnels ne bénéficient pas du droit de rétractation. Le client consommateur dispose d'un délai de 14 jours à compter de la commande ; en demandant l'exécution de la prestation avant la fin de ce délai, il reconnaît perdre son droit de rétractation une fois la prestation pleinement exécutée, et doit à défaut le montant correspondant aux services fournis jusqu'à la rétractation.</p>
+      <p>Les clients professionnels ne bénéficient pas du droit de rétractation.</p>
       <h2>7. Nature de la prestation et responsabilité</h2>
       <p>L'Évaluation est un avis professionnel d'aide à la décision. Elle ne constitue ni un conseil juridique, fiscal ou réglementaire, ni une garantie de résultat commercial. La responsabilité du Prestataire est limitée au montant payé pour la prestation concernée.</p>
       <h2>8. Données personnelles</h2>
       <p>Voir la politique de confidentialité.</p>
       <h2>9. Droit applicable et litiges</h2>
-      <p>Les présentes conditions sont soumises au droit français. Le client consommateur peut recourir gratuitement au médiateur de la consommation : [NOM ET COORDONNÉES DU MÉDIATEUR]. À défaut d'accord amiable, les tribunaux de [VILLE] sont compétents pour les clients professionnels.</p>
+      <p>Les présentes conditions sont soumises au droit français. À défaut d'accord amiable, les tribunaux de Créteil sont compétents pour les clients professionnels.</p>
     </>
   )
 }

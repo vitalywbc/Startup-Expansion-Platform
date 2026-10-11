@@ -9,8 +9,9 @@ export default async function handler(req, res) {
   const { STRIPE_SECRET_KEY, STRIPE_PRICE_ID, SITE_URL } = process.env
   if (!STRIPE_SECRET_KEY || !STRIPE_PRICE_ID) return res.status(500).json({ error: 'Payments not configured' })
 
-  const { submission_id, email } = req.body || {}
+  const { submission_id, email, business_purchase } = req.body || {}
   if (!UUID_RE.test(submission_id || '')) return res.status(400).json({ error: 'Invalid submission' })
+  if (business_purchase !== true) return res.status(400).json({ error: 'Business purchase confirmation required' })
 
   // The submission must exist and not be paid already.
   try {
@@ -30,7 +31,7 @@ export default async function handler(req, res) {
       mode: 'payment',
       line_items: [{ price: STRIPE_PRICE_ID, quantity: 1 }],
       client_reference_id: submission_id,
-      metadata: { submission_id, product: 'france_readiness_assessment' },
+      metadata: { submission_id, product: 'france_readiness_assessment', business_purchase: 'true' },
       customer_email: typeof email === 'string' && email.includes('@') ? email : undefined,
       customer_creation: 'always',
       billing_address_collection: 'required',

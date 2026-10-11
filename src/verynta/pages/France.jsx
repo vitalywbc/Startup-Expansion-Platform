@@ -15,6 +15,7 @@ export default function France() {
               <Link to="/france/intake" className="vy-btn">Start the free intake</Link>
               <span className="vy-muted-strong">5 minutes. Full assessment €39 excl. VAT.</span>
             </div>
+            <p className="vy-muted">For businesses only.</p>
           </div>
           <figure className="vy-card vy-example">
             <figcaption className="vy-example__caption">Example verdict, AgriTech company from India</figcaption>
@@ -44,7 +45,7 @@ export default function France() {
 
         <section id="pricing" className="vy-wrap vy-section">
           <h2 className="vy-h2 vy-h2--wide">Start with the verdict. Go further if it says yes.</h2>
-          <p className="vy-body">Each step is a separate deliverable, bought on its own. Prices exclude VAT; VAT is added only where it applies.</p>
+          <p className="vy-body">Each step is a separate deliverable, bought on its own. Prices exclude VAT; VAT is added only where it applies. For businesses only.</p>
           <div className="vy-tiers">
             <div className="vy-card vy-tier vy-tier--main">
               <h3>Readiness assessment</h3>

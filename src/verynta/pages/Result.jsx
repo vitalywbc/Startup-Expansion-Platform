@@ -20,6 +20,8 @@ export default function Result() {
   const [result] = useState(readResult)
   const [loading, setLoading] = useState(false)
   const [error, setError] = useState(null)
+  const [alreadyPaid, setAlreadyPaid] = useState(false)
+  const [businessConfirmed, setBusinessConfirmed] = useState(false)
   const cancelled = new URLSearchParams(window.location.search).get('cancelled')
 
   if (!result) {
@@ -38,14 +40,20 @@ export default function Result() {
   const verdict = verdictFromScores(result.scores)
 
   async function checkout() {
+    if (!businessConfirmed) return
     setLoading(true)
     setError(null)
     try {
       const res = await fetch('/api/create-checkout-session', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ submission_id: result.id, email: result.email }),
+        body: JSON.stringify({ submission_id: result.id, email: result.email, business_purchase: businessConfirmed }),
       })
+      if (res.status === 409) {
+        setAlreadyPaid(true)
+        setLoading(false)
+        return
+      }
       const body = await res.json()
       if (!res.ok || !body.url) throw new Error(body.error || 'Checkout unavailable')
       window.location.href = body.url
@@ -86,12 +94,22 @@ export default function Result() {
             <li><span className="vy-dot vy-dot--ready" />A scored readiness profile with the French barriers that apply to you</li>
             <li><span className="vy-dot vy-dot--ready" />What to fix first, reviewed personally, within 5 business days of your answers</li>
           </ul>
-          {cancelled && <p className="vy-note">Payment was not completed. You can try again below.</p>}
-          <button type="button" className="vy-btn vy-btn--block vy-btn--large" onClick={checkout} disabled={loading}>
-            {loading ? 'Opening secure payment…' : 'Get the full assessment for €39'}
-          </button>
-          {error && <p className="vy-error" role="alert">{error}</p>}
-          <p className="vy-fine">€39 excl. VAT; VAT is added only where it applies. Secure payment by Stripe. See the <Link to="/legal/cgv">terms of sale</Link>.</p>
+          {alreadyPaid ? (
+            <p className="vy-note" role="status">This assessment is already paid. Your questionnaire will arrive by email.</p>
+          ) : (
+            <>
+              {cancelled && <p className="vy-note">Payment was not completed. You can try again below.</p>}
+              <label className="vy-check">
+                <input type="checkbox" checked={businessConfirmed} onChange={(e) => setBusinessConfirmed(e.target.checked)} />
+                <span>I am purchasing on behalf of a company or as a self-employed professional, for business purposes.</span>
+              </label>
+              <button type="button" className="vy-btn vy-btn--block vy-btn--large" onClick={checkout} disabled={loading || !businessConfirmed}>
+                {loading ? 'Opening secure payment…' : 'Get the full assessment for €39'}
+              </button>
+              {error && <p className="vy-error" role="alert">{error}</p>}
+            </>
+          )}
+          <p className="vy-fine">€39 excl. VAT; VAT is added only where it applies. Secure payment by Stripe. For businesses only. See the <Link to="/legal/cgv">terms of sale</Link>.</p>
         </section>
       </main>
       <Footer />
