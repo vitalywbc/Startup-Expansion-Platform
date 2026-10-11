@@ -164,6 +164,7 @@ body.vy { background: #EEF1EF; }
 .vy-driver__track { height: 8px; background: var(--line); border-radius: 4px; }
 .vy-driver__fill { height: 8px; background: var(--ink); border-radius: 4px; }
 .vy-buy { padding-block: 44px 24px; display: flex; flex-direction: column; gap: 20px; }
+.vy-buy .vy-tiers { grid-template-columns: 1fr; }
 .vy-check { display: flex; gap: 12px; align-items: flex-start; font-size: 15px; line-height: 1.5; color: var(--ink-2); cursor: pointer; }
 .vy-check input { flex-shrink: 0; width: 20px; height: 20px; margin: 0; accent-color: var(--ink); }
 

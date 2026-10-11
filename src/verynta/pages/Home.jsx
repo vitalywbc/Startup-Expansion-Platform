@@ -1,5 +1,6 @@
 import { Header, Footer } from '../Layout'
 import { Link } from '../router'
+import PricingTiers from '../PricingTiers'
 
 export default function Home() {
   return (
@@ -46,6 +47,12 @@ export default function Home() {
               <span className="vy-muted">In development</span>
             </div>
           </div>
+        </section>
+
+        <section id="pricing" className="vy-wrap vy-section">
+          <h2 className="vy-h2 vy-h2--wide">France, priced in steps</h2>
+          <p className="vy-body">Each step is a separate deliverable, bought on its own. Prices exclude VAT; VAT is added only where it applies. For businesses only.</p>
+          <PricingTiers />
         </section>
 
         <section className="vy-wrap vy-section">

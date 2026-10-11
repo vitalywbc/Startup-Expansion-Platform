@@ -4,6 +4,7 @@ import Home from './pages/Home'
 import France from './pages/France'
 import Intake from './pages/Intake'
 import Result from './pages/Result'
+import Upgrade from './pages/Upgrade'
 import Thanks from './pages/Thanks'
 import Business from './pages/Business'
 import Legal from './pages/Legal'
@@ -27,6 +28,7 @@ export default function VeryntaApp() {
   else if (path === '/france') page = <France />
   else if (path === '/france/intake') page = <Intake />
   else if (path === '/france/result') page = <Result />
+  else if (path === '/france/upgrade') page = <Upgrade />
   else if (path === '/france/business') page = <Business />
   else if (path === '/thanks') page = <Thanks />
   else if (path.startsWith('/legal/')) page = <Legal page={path.split('/')[2]} />

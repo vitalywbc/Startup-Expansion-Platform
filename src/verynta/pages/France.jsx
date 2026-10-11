@@ -1,6 +1,7 @@
 import { Header, Footer } from '../Layout'
 import { Link } from '../router'
 import Gauge from '../Gauge'
+import PricingTiers from '../PricingTiers'
 
 export default function France() {
   return (
@@ -46,26 +47,7 @@ export default function France() {
         <section id="pricing" className="vy-wrap vy-section">
           <h2 className="vy-h2 vy-h2--wide">Start with the verdict. Go further if it says yes.</h2>
           <p className="vy-body">Each step is a separate deliverable, bought on its own. Prices exclude VAT; VAT is added only where it applies. For businesses only.</p>
-          <div className="vy-tiers">
-            <div className="vy-card vy-tier vy-tier--main">
-              <h3>Readiness assessment</h3>
-              <p className="vy-price">€39</p>
-              <p>Sector questionnaire and a written, scored readiness profile with your verdict.</p>
-              <Link to="/france/intake" className="vy-btn vy-btn--block">Start the free intake</Link>
-            </div>
-            <div className="vy-card vy-tier">
-              <h3>France entry plan</h3>
-              <p className="vy-price">€790</p>
-              <p>Positioning for French buyers, entry route, regulatory roadmap, partner and channel map, and a 12-month milestone plan. Clarifications by email, one revision round.</p>
-              <span className="vy-muted">Offered after your assessment</span>
-            </div>
-            <div className="vy-card vy-tier">
-              <h3>Market development</h3>
-              <p className="vy-price vy-price--text">Scoped to your case</p>
-              <p>Hands-on work in France: partner identification, first B2B sales, pilot customers.</p>
-              <span className="vy-muted">By proposal</span>
-            </div>
-          </div>
+          <PricingTiers />
           <p className="vy-body">Running an established company choosing between several European markets? <Link to="/france/business">Request a market-selection brief</Link>.</p>
         </section>
 

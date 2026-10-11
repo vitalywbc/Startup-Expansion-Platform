@@ -1,3 +1,6 @@
+// Trimmed, lower-cased form used whenever two addresses are compared.
+export const normalizeEmail = (v) => (typeof v === 'string' ? v.trim().toLowerCase() : '')
+
 // Sends an email through Resend. Returns true on success; never throws.
 export async function sendEmail({ to, subject, text, replyTo }) {
   const { RESEND_API_KEY, EMAIL_FROM } = process.env
