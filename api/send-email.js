@@ -10,7 +10,11 @@ export default async function handler(req, res) {
 
   const data = req.body
 
-  const kind = data.company_type === 'established' ? 'Market-selection brief request' : 'New intake submission'
+  // A direct_paid intake is a lead, not a sale: the assessment is paid from the result page
+  // afterwards, and the webhook is what sends PAID. The brief request keeps its own label.
+  const kind = data.company_type === 'established'
+    ? 'Market-selection brief request'
+    : data.channel === 'direct_paid' ? 'INTAKE (not paid yet)' : 'New intake submission'
   const subject = `${kind} — ${data.company_name || 'Unknown'} · ${data.channel || 'creative_valley'} · ${data.source || 'direct'}`
 
   const body = `
