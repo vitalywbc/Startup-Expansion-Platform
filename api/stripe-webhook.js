@@ -33,7 +33,9 @@ export async function POST(request) {
 }
 
 async function handleAssessment(session, id) {
-  const { ADMIN_EMAIL, SITE_URL } = process.env
+  const { ADMIN_EMAIL, REPLY_TO_EMAIL, SITE_URL } = process.env
+  // Where a client's reply should land. Admin notifications keep their own settings.
+  const replyTo = REPLY_TO_EMAIL || ADMIN_EMAIL
   const db = supabaseAdmin()
 
   // Only the first delivery flips paid=false → true, so retries don't send duplicate emails.
@@ -70,7 +72,7 @@ async function handleAssessment(session, id) {
   if (to) {
     await sendEmail({
       to,
-      replyTo: ADMIN_EMAIL,
+      replyTo,
       subject: 'Your Verynta France readiness assessment',
       text: `Hello ${row.contact_name || ''},\n\nThank you for your order. Your sector questionnaire for ${row.company_name} will arrive by email within 2 business days. Once you send your answers, your readiness profile follows within 5 business days.${upgrade}\n\nYour invoice comes separately from Stripe.\n\nVerynta\nhello@verynta.com`,
     })
@@ -79,7 +81,8 @@ async function handleAssessment(session, id) {
 }
 
 async function handlePlan(session, id) {
-  const { ADMIN_EMAIL } = process.env
+  const { ADMIN_EMAIL, REPLY_TO_EMAIL } = process.env
+  const replyTo = REPLY_TO_EMAIL || ADMIN_EMAIL
   const db = supabaseAdmin()
   const now = new Date().toISOString()
 
@@ -131,7 +134,7 @@ async function handlePlan(session, id) {
   if (to) {
     await sendEmail({
       to,
-      replyTo: ADMIN_EMAIL,
+      replyTo,
       subject: 'Your Verynta France entry plan',
       text: `Hello ${row.contact_name || ''},\n\nThank you for your order. Your France entry plan for ${row.company_name} starts with a brief: the questions arrive by email within 2 business days. Your plan is delivered within 5 business days of receiving your completed brief.\n\nThe readiness assessment is included in the plan.\n\nYour invoice comes separately from Stripe.\n\nVerynta\nhello@verynta.com`,
     })
